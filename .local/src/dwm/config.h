@@ -1,21 +1,23 @@
 // See LICENSE file for copyright and license details.
 
+#include <stdint.h>
+#define int8 int8_t
 // appearance
-static const char borderpx = 3; // border pixel of windows
-static const char snap = 16; // snap pixel
-static const char showsystray = 1; // 0 means no systray
-static const char systrayonleft = 0; // 0: systray in the right corner, >0: systray on left of status text
-static const char systrayspacing = 2; // systray spacing
-static const char systraypinning = 0; // 0: sloppy systray follows selected monitor, >0: pin systray to monitor X
-static const char systraypinningfailfirst = 1; // 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor
-static const char gappih = 8; // horiz inner gap between windows
-static const char gappiv = 8; // vert inner gap between windows
-static const char gappoh = 8; // horiz outer gap between windows and screen edge
-static const char gappov = 8; // vert outer gap between windows and screen edge
-static       char smartgaps = 0; // 1 = no outer gap when there is only one window
-static const char showbar = 1; // 0 = no bar
-static const char topbar = 1; // 0 = bottom bar
-static const char user_bh = 12; // 2 - default spacing around the bar's font
+static const int8 borderpx = 3; // border pixel of windows
+static const int8 snap = 16; // snap pixel
+static const int8 showsystray = 1; // 0 means no systray
+static const int8 systrayonleft = 0; // 0: systray in the right corner, >0: systray on left of status text
+static const int8 systrayspacing = 2; // systray spacing
+static const int8 systraypinning = 0; // 0: sloppy systray follows selected monitor, >0: pin systray to monitor X
+static const int8 systraypinningfailfirst = 1; // 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor
+static const int8 gappih = 8; // horiz inner gap between windows
+static const int8 gappiv = 8; // vert inner gap between windows
+static const int8 gappoh = 8; // horiz outer gap between windows and screen edge
+static const int8 gappov = 8; // vert outer gap between windows and screen edge
+static       int8 smartgaps = 0; // 1 = no outer gap when there is only one window
+static const int8 showbar = 1; // 0 = no bar
+static const int8 topbar = 1; // 0 = bottom bar
+static const int8 user_bh = 12; // 2 - default spacing around the bar's font
 static const char *fonts[]          = { "Noto Sans:size=10:style=Bold", "JetBrainsMono NF:size=10" };
 static const char dmenufont[]       = "JetBrainsMono NF:size=10";
 
@@ -82,10 +84,10 @@ static const Rule rules[] = {
 
 // layouts
 static const float mfact = 0.5; // factor of master area size
-static const char nmaster = 1; // number of clients in master area
-static const char resizehints = 1; // 1 = respect size hints in tiled resizals
-static const char attachbelow = 1; // 1 = attach after the currently active window
-static const char lockfullscreen = 0; // 1 = force focus on the fullscreen window
+static const int8 nmaster = 1; // number of clients in master area
+static const int8 resizehints = 1; // 1 = respect size hints in tiled resizals
+static const int8 attachbelow = 1; // 1 = attach after the currently active window
+static const int8 lockfullscreen = 0; // 1 = force focus on the fullscreen window
 
 #define FORCE_VSPLIT 1 // nrowgrid layout: force two clients to always split vertically
 #include "vanitygaps.c"
@@ -182,7 +184,6 @@ static const Key keys[] = {
   { MODKEY, XK_q, killclient, {0} },
   { MODKEY, XK_t, setlayout, {.v = &layouts[0]} },
   { MODKEY, XK_m, setlayout, {.v = &layouts[1]} },
-  { MODKEY, XK_r, setlayout, {.v = &layouts[2]} },
   { MODKEY, XK_f, togglefloating, {0} },
   { MODKEY, XK_0, view, {.ui = ~0 } },
   { MODKEY|ShiftMask, XK_0, tag, {.ui = ~0 } },
@@ -192,12 +193,13 @@ static const Key keys[] = {
   { MODKEY|ShiftMask, XK_period, tagmon, {.i = +1 } },
   { MODKEY|ShiftMask, XK_q, quit, {0} },
   { MODKEY, XK_space, spawn, SHCMD("pkill -RTMIN+1 dwmblocks") },
-  { 0|ShiftMask, XF86XK_AudioMute, spawn, SHCMD("wpctl set-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+1 dwmblocks") },
-  { 0|ShiftMask, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SOURCE@ 5%+ && pkill -RTMIN+1 dwmblocks") },
-  { 0|ShiftMask, XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SOURCE@ 5%- && pkill -RTMIN+1 dwmblocks") },
-  { 0, XF86XK_AudioMute, spawn, SHCMD("wpctl set-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 dwmblocks") },
-  { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%+ && pkill -RTMIN+1 dwmblocks") },
-  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%- && pkill -RTMIN+1 dwmblocks")},
+  { MODKEY|ShiftMask, XK_r, spawn, SHCMD("pkill -RTMIN+10 dwmblocks") },
+  { 0|ShiftMask, XF86XK_AudioMute, spawn, SHCMD("wpctl set-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+3 dwmblocks") },
+  { 0|ShiftMask, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SOURCE@ 5%+ && pkill -RTMIN+3 dwmblocks") },
+  { 0|ShiftMask, XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SOURCE@ 5%- && pkill -RTMIN+3 dwmblocks") },
+  { 0, XF86XK_AudioMute, spawn, SHCMD("wpctl set-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+2 dwmblocks") },
+  { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%+ && pkill -RTMIN+2 dwmblocks") },
+  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%- && pkill -RTMIN+2 dwmblocks")},
   { 0, XF86XK_MonBrightnessUp,  spawn, SHCMD("brightnessctl -q s +10%") },
   { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl -q s 10%-")},
 

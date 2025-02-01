@@ -13,6 +13,9 @@ cp -r ~/dwm-dots/.config/* ~/.config/
 cp ~/dwm-dots/.config/* ~/.config/
 mkdir ~/.local
 cp -r ~/dwm-dots/.local/* ~/.local/
+cp ~/dwm-dots/.Xresources ~/
+cp ~/dwm-dots/.xprofile ~/
+cp ~/dwm-dots/.gtkrc-2.0 ~/
 (cd ~/.local/src/dwm/ && make && sudo make install)
 (cd ~/.local/src/dwmblocks/ && make && sudo make install)
 (cd ~/.local/src/slock/ && make && sudo make install)

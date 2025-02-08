@@ -3,7 +3,7 @@
 #include <stdint.h>
 #define int8 int8_t
 // appearance
-static const int8 borderpx = 3; // border pixel of windows
+static const int8 borderpx = 2; // border pixel of windows
 static const int8 snap = 16; // snap pixel
 static const int8 showsystray = 1; // 0 means no systray
 static const int8 systrayonleft = 0; // 0: systray in the right corner, >0: systray on left of status text
@@ -140,6 +140,8 @@ static const Key keys[] = {
   { 0|ShiftMask, XK_Print, spawn, SHCMD("flameshot gui -d 3000") },
   { Mod1Mask, XK_F4, spawn, SHCMD("~/.local/bin/powermenu.sh") },
   { MODKEY, XK_v, spawn, SHCMD("export CM_LAUNCHER=rofi && clipmenu -p 'Clipboard' -theme clipmenu") },
+  { MODKEY|ControlMask, XK_period, spawn, SHCMD("~/.local/bin/kbsetup.sh") },
+  { MODKEY|ShiftMask, XK_x, spawn, SHCMD("~/.local/bin/color-pick.sh") },
 
   { MODKEY|ShiftMask, XK_b, togglebar, {0} },
   { MODKEY|ShiftMask, XK_b, spawn, SHCMD("killall dwmblocks && dwmblocks") },
@@ -170,21 +172,31 @@ static const Key keys[] = {
   { MODKEY|Mod1Mask|ShiftMask, XK_i, incrigaps, {.i = -1 } },
   { MODKEY|Mod1Mask, XK_o, incrogaps, {.i = +1 } },
   { MODKEY|Mod1Mask|ShiftMask, XK_o, incrogaps, {.i = -1 } },
-  { MODKEY|Mod1Mask, XK_6, incrihgaps, {.i = +1 } },
+  { MODKEY|Mod1Mask|ControlMask, XK_6, incrihgaps, {.i = +1 } },
   { MODKEY|Mod1Mask|ShiftMask, XK_6, incrihgaps, {.i = -1 } },
-  { MODKEY|Mod1Mask, XK_7, incrivgaps, {.i = +1 } },
+  { MODKEY|Mod1Mask|ControlMask, XK_7, incrivgaps, {.i = +1 } },
   { MODKEY|Mod1Mask|ShiftMask, XK_7, incrivgaps, {.i = -1 } },
-  { MODKEY|Mod1Mask, XK_8, incrohgaps, {.i = +1 } },
+  { MODKEY|Mod1Mask|ControlMask, XK_8, incrohgaps, {.i = +1 } },
   { MODKEY|Mod1Mask|ShiftMask, XK_8, incrohgaps, {.i = -1 } },
-  { MODKEY|Mod1Mask, XK_9, incrovgaps, {.i = +1 } },
+  { MODKEY|Mod1Mask|ControlMask, XK_9, incrovgaps, {.i = +1 } },
   { MODKEY|Mod1Mask|ShiftMask, XK_9, incrovgaps, {.i = -1 } },
-  { MODKEY|Mod1Mask, XK_0, togglegaps, {0} },
+  { MODKEY|Mod1Mask, XK_minus, togglegaps, {0} },
   { MODKEY|Mod1Mask|ShiftMask, XK_0, defaultgaps, {0} },
   { MODKEY, XK_Tab, view, {0} },
   { MODKEY, XK_q, killclient, {0} },
   { MODKEY, XK_t, setlayout, {.v = &layouts[0]} },
   { MODKEY, XK_m, setlayout, {.v = &layouts[1]} },
-  { MODKEY, XK_f, togglefloating, {0} },
+  { MODKEY|Mod1Mask, XK_1, setlayout, {.v = &layouts[2]} },
+  { MODKEY|Mod1Mask, XK_2, setlayout, {.v = &layouts[3]} },
+  { MODKEY|Mod1Mask, XK_3, setlayout, {.v = &layouts[4]} },
+  { MODKEY|Mod1Mask, XK_4, setlayout, {.v = &layouts[5]} },
+  { MODKEY|Mod1Mask, XK_5, setlayout, {.v = &layouts[6]} },
+  { MODKEY|Mod1Mask, XK_6, setlayout, {.v = &layouts[7]} },
+  { MODKEY|Mod1Mask, XK_7, setlayout, {.v = &layouts[8]} },
+  { MODKEY|Mod1Mask, XK_8, setlayout, {.v = &layouts[9]} },
+  { MODKEY|Mod1Mask, XK_9, setlayout, {.v = &layouts[10]} },
+  { MODKEY|Mod1Mask, XK_0, setlayout, {.v = &layouts[11]} },
+  { MODKEY, XK_f, togglefloating, {0}  },
   { MODKEY, XK_0, view, {.ui = ~0 } },
   { MODKEY|ShiftMask, XK_0, tag, {.ui = ~0 } },
   { MODKEY, XK_comma, focusmon, {.i = -1 } },

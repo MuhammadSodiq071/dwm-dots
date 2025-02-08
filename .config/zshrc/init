@@ -1,5 +1,5 @@
 # Exports
-export TERM=alacritty
+export TERM=kitty
 export EDITOR=nvim
 export BROWSER=firefox
 export PATH="/usr/lib/ccache/bin/:$PATH"

@@ -3,7 +3,7 @@
 mutestat=$(wpctl get-volume @DEFAULT_SOURCE@ | grep "MUTED" > /dev/null 2>&1; echo $?)
 
 case $mutestat in
-  0 ) echo 󰍭 && exit ;;
+  0) echo 󰍭 && exit ;;
 esac
 
 vol=$(wpctl get-volume @DEFAULT_SOURCE@)

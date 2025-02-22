@@ -7,10 +7,9 @@ return {
       config = {
         header = {
           'Welcome to Neovim!',
-          'Happy Coding!'
         },
         footer = {
-          'Powered by Lazy.nvim',
+          '',
         },
       }
     })

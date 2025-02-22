@@ -25,17 +25,17 @@ window {
     width: 500px;
     height: 450px;
     border: 3px;
-    border-color: #181825;
-    background-color: #181825;
+    border-color: #2e2e2e;
+    background-color: #2e2e2e;
 }
 
 mainbox {
-    background-color: #181825;
+    background-color: #2e2e2e;
 }
 
 inputbar {
     children: [prompt,entry];
-    background-color: #181825;
+    background-color: #2e2e2e;
     border-radius: 5px;
     padding: 2px;
 }
@@ -43,7 +43,7 @@ inputbar {
 prompt {
     background-color: #7aa2f7;
     padding: 6px;
-    text-color: #181825;
+    text-color: #2e2e2e;
     border-radius: 3px;
     margin: 20px 0px 0px 20px;
 }
@@ -56,8 +56,8 @@ textbox-prompt-colon {
 entry {
     padding: 6px;
     margin: 20px 0px 0px 10px;
-    text-color: #ED6A28;
-    background-color: #181825;
+    text-color: #fe8019;
+    background-color: #2e2e2e;
     placeholder:"Search";
 }
 
@@ -66,12 +66,12 @@ listview {
     padding: 6px 0px 0px;
     margin: 10px 0px 0px 20px;
     columns: 1;
-    background-color: #181825;
+    background-color: #2e2e2e;
 }
 
 element {
     padding: 5px;
-    background-color: #181825;
+    background-color: #2e2e2e;
     text-color: #D9E0EE;
 }
 
@@ -80,8 +80,8 @@ element-icon {
 }
 
 element selected {
-    background-color: #181825;
-    text-color: #ED6A28;
+    background-color: #383838;
+    text-color: #fe8019;
 }
 
 mode-switcher {
@@ -90,15 +90,15 @@ mode-switcher {
 
 button {
     padding: 10px;
-    background-color: #181825;
+    background-color: #2e2e2e;
     text-color: #D9E0EE;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
 
 button selected {
-  background-color: #181825;
-  text-color: #ED6A28;
+  background-color: #2e2e2e;
+  text-color: #fe8019;
 }
 
 

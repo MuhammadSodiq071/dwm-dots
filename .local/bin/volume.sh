@@ -1,14 +1,13 @@
 #!/bin/sh
 
-mutestat=$(wpctl get-volume @DEFAULT_SINK@ | grep "MUTED" > /dev/null 2>&1; echo $?)
+mutestat=$(pactl list sinks | grep "Mute: yes" > /dev/null 2>&1; echo $?)
 
 case $mutestat in
   0) echo " " && exit ;;
 esac
 
-vol=$(wpctl get-volume @DEFAULT_SINK@)
-vol=$(echo "$vol" | awk '{print $2}')
-vol=$(echo "$vol * 100" | bc | awk '{printf "%.0f", $0}')
+vol=$(pactl get-sink-volume @DEFAULT_SINK@)
+vol=$(echo "$vol" | awk '{print $5}' | tr -d '%')
 
 case 1 in
   $((vol >= 60)) ) icon=" " ;;
@@ -17,5 +16,5 @@ case 1 in
   * ) echo " " && exit ;;
 esac
 
-echo "$icon $vol%"
+echo "$icon  $vol%"
 

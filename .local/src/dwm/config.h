@@ -18,18 +18,16 @@ static       int8 smartgaps = 0; // 1 = no outer gap when there is only one wind
 static const int8 showbar = 1; // 0 = no bar
 static const int8 topbar = 1; // 0 = bottom bar
 static const int8 user_bh = 12; // 2 - default spacing around the bar's font
-static const char *fonts[]          = { "Noto Sans:size=10:style=Bold", "JetBrainsMono NF:size=10" };
+static const char *fonts[]          = { "Noto Sans:size=9:style=Bold", "JetBrainsMono NF:size=9" };
 static const char dmenufont[]       = "JetBrainsMono NF:size=10";
 
 static char normfgcolor[]           = "#bbbbbb";
 static char normbgcolor[]           = "#282828";
 static char normbordercolor[]       = "#3c3836";
-/*static char normfloatcolor[]        = "#db8fd9";*/
 
 static char selfgcolor[]            = "#fbf1c7";
 static char selbgcolor[]            = "#d65d0e";
 static char selbordercolor[]        = "#d65d0e";
-/*static char selfloatcolor[]         = "#d65d0e";*/
 
 static char statusbgcolor[]         = "#282828";
 static char statusfgcolor[]         = "#bbbbbb";
@@ -206,12 +204,12 @@ static const Key keys[] = {
   { MODKEY|ShiftMask, XK_q, quit, {0} },
   { MODKEY, XK_space, spawn, SHCMD("pkill -RTMIN+1 dwmblocks") },
   { MODKEY|ShiftMask, XK_r, spawn, SHCMD("pkill -RTMIN+10 dwmblocks") },
-  { 0|ShiftMask, XF86XK_AudioMute, spawn, SHCMD("wpctl set-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+3 dwmblocks") },
-  { 0|ShiftMask, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SOURCE@ 5%+ && pkill -RTMIN+3 dwmblocks") },
-  { 0|ShiftMask, XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SOURCE@ 5%- && pkill -RTMIN+3 dwmblocks") },
-  { 0, XF86XK_AudioMute, spawn, SHCMD("wpctl set-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+2 dwmblocks") },
-  { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%+ && pkill -RTMIN+2 dwmblocks") },
-  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%- && pkill -RTMIN+2 dwmblocks")},
+  { 0|ShiftMask, XF86XK_AudioMute, spawn, SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+3 dwmblocks") },
+  { 0|ShiftMask, XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ +5% && pkill -RTMIN+3 dwmblocks") },
+  { 0|ShiftMask, XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ -5% && pkill -RTMIN+3 dwmblocks") },
+  { 0, XF86XK_AudioMute, spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+2 dwmblocks") },
+  { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+2 dwmblocks") },
+  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+2 dwmblocks")},
   { 0, XF86XK_MonBrightnessUp,  spawn, SHCMD("brightnessctl -q s +10%") },
   { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl -q s 10%-")},
 

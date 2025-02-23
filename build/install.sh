@@ -4,7 +4,12 @@ sudo pacman -S dunst libnotify fzf lsd kitty fastfetch clipmenu flameshot bright
 # installing paru and aur packages
 git clone https://aur.archlinux.org/paru-bin.git && (cd paru-bin && makepkg -si) && rm -rf paru-bin
 paru
-paru -S vscodium-bin dashbinsh tty-clock gruvbox-material-gtk-theme-git
+paru -S vscodium-bin dashbinsh tty-clock
+
+# installing Gruvbox-Material theme
+git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
+doas cp -r ~/gruvbox-material-gtk/themes/Gruvbox-Material-Dark /usr/share/themes
+doas cp -r ~/gruvbox-material-gtk/icons/Gruvbox-Material-Dark /usr/share/icons
 
 # copying configs
 cp -r ~/dwm-dots/wallpaper ~/

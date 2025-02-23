@@ -10,6 +10,7 @@ paru -S vscodium-bin dashbinsh tty-clock
 git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
 doas cp -r ~/gruvbox-material-gtk/themes/Gruvbox-Material-Dark /usr/share/themes
 doas cp -r ~/gruvbox-material-gtk/icons/Gruvbox-Material-Dark /usr/share/icons
+rm -rf gruvbox-material-gtk
 
 # copying configs
 cp -r ~/dwm-dots/wallpaper ~/

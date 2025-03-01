@@ -102,7 +102,7 @@ enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,
 
 typedef union {
 	int8_t i;
-	uint8_t ui;
+	unsigned short ui;
 	float f;
 	const void *v;
 } Arg;

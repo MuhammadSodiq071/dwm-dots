@@ -77,6 +77,7 @@ static const Rule rules[] = {
 	 */
 	// class      instance    title       tags mask     isfloating   monitor
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+  { "Calculator", NULL,     NULL,       0,            1,           -1 },
 	/*{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },*/
 };
 
@@ -132,8 +133,10 @@ static const Key keys[] = {
   // modifier, key, function, argument
   { MODKEY, XK_a, spawn, {.v = dmenucmd } },
   { MODKEY, XK_Return, spawn, SHCMD("kitty") },
-  { MODKEY, XK_b, spawn, SHCMD("firefox") },
+  { MODKEY|ShiftMask, XK_Return, spawn, SHCMD("kitty --config ~/.config/kitty/nonebgopacity.conf") },
+  { MODKEY, XK_b, spawn, SHCMD("librewolf") },
   { MODKEY|ShiftMask, XK_t, spawn, SHCMD("telegram-desktop") },
+  { MODKEY|ShiftMask, XK_w, spawn, SHCMD("feh --randomize --no-fehbg --bg-fill ~/wallpaper") },
   { 0, XK_Print, spawn, SHCMD("flameshot gui") },
   { 0|ShiftMask, XK_Print, spawn, SHCMD("flameshot gui -d 3000") },
   { Mod1Mask, XK_F4, spawn, SHCMD("~/.local/bin/powermenu.sh") },

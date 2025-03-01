@@ -5,6 +5,7 @@ static const Block blocks[] = {
   { "", "volume.sh", 0, 2 },
   { "", "mic.sh", 0, 3 },
   { "", "battery.sh", 300, 10 },
+  { "󰯍  ", "free -h | awk '/^Swap/ { print $3 }' | tr -d i", 300, 10 },
   { "  ", "free -h | awk '/^Mem/ { print $3 }' | tr -d i",	60, 10 },
   { "  ", "date '+%d.%m'", 60, 0 },
   { "  ", "date '+%H:%M'", 5, 0},

@@ -5,16 +5,16 @@ static const char *group = "muhammadsodiq";
 static const char *colorname[NUMCOLS] = {
     [BACKGROUND] = "white",
 	[INIT] =   "2d2d2d",     /* after initialization */
-	[INPUT] =  "#005577",   /* during input */
-	[FAILED] = "#CC3333",   /* wrong password */
+	[INPUT] =  "#FE8019",   /* during input */
+	[FAILED] = "#CB231C",   /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 1;
 
-static const int logosize = 75;
+static const int logosize = 30;
 static const int logow = 12; /* Grid width and height for right center alignment*/
-static const int logoh = 6;
+static const int logoh = -7;
 
 static XRectangle rectangles[9] = {
     {0, 3, 1, 3},

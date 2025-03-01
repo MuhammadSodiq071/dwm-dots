@@ -1,5 +1,5 @@
 # installing packages
-sudo pacman -S dunst libnotify fzf lsd kitty fastfetch clipmenu flameshot brightnessctl firefox pipewire{"",-alsa,-pulse} opendoas man dmenu rofi xcape xorg-setxkbmap feh xorg telegram-desktop unzip zsh gtk-engine-murrine neovim npm xdg-user-dirs btop vulkan-radeon ranger bat gtk{2,3,4} flatpak bluez bluez-utils blueman openssh ssh-tools amd-ucode mpv imv vlc lxappearance qt{5,6}ct
+sudo pacman -S dunst libnotify fzf lsd kitty fastfetch clipmenu flameshot brightnessctl firefox pipewire{"",-alsa,-pulse} opendoas man dmenu rofi xcape xorg-setxkbmap feh xorg telegram-desktop unzip zsh gtk-engine-murrine neovim npm xdg-user-dirs btop vulkan-radeon ranger bat gtk{2,3,4} flatpak bluez bluez-utils blueman openssh ssh-tools amd-ucode mpv imv vlc lxappearance qt{5,6}ct picom
 
 # installing paru and aur packages
 git clone https://aur.archlinux.org/paru-bin.git && (cd paru-bin && makepkg -si) && rm -rf paru-bin

@@ -4,7 +4,7 @@ su -c "xbps-install opendoas && touch /etc/doas.conf && echo 'permit persist :wh
 
 # installing packages
 doas xbps-install -Su
-doas xbps-install dunst libnotify fzf lsd kitty fastfetch clipmenu flameshot brightnessctl firefox man dmenu rofi xcape setxkbmap feh xorg zsh gtk-engine-murrine neovim pnpm xdg-user-dirs btop mesa-vulkan-radeon ranger bat flatpak mpv imv vlc lxappearance qt{5,6}ct tty-clock libX{11,inerama,ft,randr}-devel imlib2-devel curl gpick translate-shell xclip xcursor-themes
+doas xbps-install dunst libnotify fzf lsd kitty fastfetch clipmenu flameshot brightnessctl firefox man dmenu rofi xcape setxkbmap feh xorg zsh gtk-engine-murrine neovim pnpm xdg-user-dirs btop mesa-vulkan-radeon ranger bat flatpak mpv imv vlc lxappearance qt{5,6}ct tty-clock libX{11,inerama,ft,randr}-devel imlib2-devel curl gpick translate-shell xclip xcursor-themes picom
 
 # installing Gruvbox-Material theme
 git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git

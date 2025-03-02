@@ -15,31 +15,23 @@
             "type": "custom"
         },
         {
-            "key": "│ {#34}{icon} os      {#keys}│",
+            "key": "│ {#32}{icon} os      {#keys}│",
             "type": "os"
         },
         {
-            "key": "│ {#35} kernel  {#keys}│",
+            "key": "│ {#31} kernel  {#keys}│",
             "type": "kernel"
         },
         {
-            "key": "│ {#33}󰅐 uptime  {#keys}│",
-            "type": "uptime"
-        },
-        {
-            "key": "│ {#36}󰇄 wm      {#keys}│",
+            "key": "│ {#33}󰇄 wm      {#keys}│",
             "type": "wm"
         },
         {
-            "key": "│ {#32} shell   {#keys}│",
+            "key": "│ {#35} shell   {#keys}│",
             "type": "shell"
         },
         {
-            "key": "│ {#31} term    {#keys}│",
-            "type": "terminal"
-        },
-        {
-            "key": "│ {#33}󰍛 cpu     {#keys}│",
+            "key": "│ {#36}󰍛 cpu     {#keys}│",
             "type": "cpu",
             "showPeCoreCount": true
         },
@@ -51,6 +43,11 @@
         {
             "key": "│ {#35} memory  {#keys}│",
             "type": "memory"
+        },
+        {
+            "key": "│ {#33} weather {#keys}│",
+            "type": "weather",
+            "timeout": "1000"
         },
         {
             "key": "├───────────┤",

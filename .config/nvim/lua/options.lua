@@ -14,10 +14,10 @@ o.cursorlineopt = "number"
 
 -- Indenting
 o.expandtab = true -- tabs = spaces
-o.shiftwidth = 2 -- 2 spaces with < >
+o.shiftwidth = 4 -- 2 spaces with < >
 o.smartindent = true
-o.tabstop = 2 -- tabs = 2 spaces
-o.softtabstop = 2 -- 2 spaces with <Tab>
+o.tabstop = 4 -- tabs = 2 spaces
+o.softtabstop = 4 -- 2 spaces with <Tab>
 
 -- api.nvim_create_autocmd("FileType", {
 --   pattern = "c",

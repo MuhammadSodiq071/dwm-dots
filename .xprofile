@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pipewire &
+wireplumber &
 ~/.local/bin/kbsetup.sh
 xrdb $HOME/.Xresources
 feh --no-fehbg --bg-fill ~/wallpaper/default.png

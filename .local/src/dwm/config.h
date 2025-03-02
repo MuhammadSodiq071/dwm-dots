@@ -134,7 +134,7 @@ static const Key keys[] = {
   { MODKEY, XK_a, spawn, {.v = dmenucmd } },
   { MODKEY, XK_Return, spawn, SHCMD("kitty") },
   { MODKEY|ShiftMask, XK_Return, spawn, SHCMD("kitty --config ~/.config/kitty/nonebgopacity.conf") },
-  { MODKEY, XK_b, spawn, SHCMD("librewolf") },
+  { MODKEY, XK_b, spawn, SHCMD("firefox") },
   { MODKEY|ShiftMask, XK_t, spawn, SHCMD("telegram-desktop") },
   { MODKEY|ShiftMask, XK_w, spawn, SHCMD("feh --randomize --no-fehbg --bg-fill ~/wallpaper") },
   { 0, XK_Print, spawn, SHCMD("flameshot gui") },

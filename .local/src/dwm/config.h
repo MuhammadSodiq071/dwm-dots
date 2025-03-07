@@ -132,8 +132,8 @@ static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "config", N
 static const Key keys[] = {
   // modifier, key, function, argument
   { MODKEY, XK_a, spawn, {.v = dmenucmd } },
-  { MODKEY, XK_Return, spawn, SHCMD("kitty") },
-  { MODKEY|ShiftMask, XK_Return, spawn, SHCMD("kitty --config ~/.config/kitty/nonebgopacity.conf") },
+  { MODKEY, XK_Return, spawn, SHCMD("alacritty") },
+  { MODKEY|ShiftMask, XK_Return, spawn, SHCMD("alacritty --config ~/.config/alacritty/nonebgopacity.toml") },
   { MODKEY, XK_b, spawn, SHCMD("firefox") },
   { MODKEY|ShiftMask, XK_t, spawn, SHCMD("telegram-desktop") },
   { MODKEY|ShiftMask, XK_w, spawn, SHCMD("feh --randomize --no-fehbg --bg-fill ~/wallpaper") },

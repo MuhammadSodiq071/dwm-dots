@@ -3,28 +3,30 @@ su -c "xbps-install opendoas && touch /etc/doas.conf && echo 'permit persist :wh
 
 echo "Installing packages"
 doas xbps-install -Su
-doas xbps-install dunst libnotify fzf lsd kitty fastfetch clipmenu flameshot brightnessctl firefox man dmenu rofi xcape setxkbmap feh xorg zsh gtk-engine-murrine neovim pnpm xdg-user-dirs btop mesa-vulkan-radeon ranger bat flatpak mpv imv vlc lxappearance qt{5,6}ct tty-clock libX{11,inerama,ft,randr}-devel imlib2-devel curl gpick translate-shell xclip xcursor-themes picom pulseaudio alsa-plugins-pulseaudio alsa-utils
+doas xbps-install dunst libnotify fzf lsd alacritty fastfetch clipmenu flameshot brightnessctl firefox man dmenu rofi xcape setxkbmap feh xorg zsh gtk-engine-murrine neovim pnpm xdg-user-dirs btop mesa-vulkan-radeon ranger bat flatpak mpv imv vlc lxappearance qt{5,6}ct tty-clock libX{11,inerama,ft,randr}-devel imlib2-devel curl gpick translate-shell xclip xcursor-themes picom pulseaudio alsa-plugins-pulseaudio alsa-utils
 
 echo "Copying dwm.desktop for display manager"
 doas mkdir -p /usr/share/xsessions
 doas cp ~/dwm-dots/build/dwm.desktop /usr/share/xsessions/
 
-echo "Installing Gruvbox-Material theme"
+echo "Installing Gruvbox-Material theme and JetBrainsMono Nerd Fonts"
 git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
 doas cp -r ~/gruvbox-material-gtk/themes/Gruvbox-Material-Dark /usr/share/themes
 doas cp -r ~/gruvbox-material-gtk/icons/Gruvbox-Material-Dark /usr/share/icons
 doas rm -rf gruvbox-material-gtk
 
+doas mkdir -p /usr/share/fonts/nerdfonts
+doas cp ~/dwm-dots/build/*.ttf /usr/share/fonts/nerdfonts
+
 echo "Copying configs..."
-mkdir ~/wallpaper
-ln ~/dwm-dots/wallpaper/* ~/wallpaper/
 mkdir ~/.config
 cp -r ~/dwm-dots/.config/* ~/.config/
 mkdir ~/.local
 cp -r ~/dwm-dots/.local/* ~/.local/
-ln ~/dwm-dots/.Xresources ~/
-ln ~/dwm-dots/.xprofile ~/
-ln ~/dwm-dots/.gtkrc-2.0 ~/
+cp ~/dwm-dots/.Xresources ~/
+cp ~/dwm-dots/.xprofile ~/
+cp ~/dwm-dots/.gtkrc-2.0 ~/
+cp -r ~/dwm-dots/wallpaper ~/
 
 echo "Compiling dwm, dwmblocks(bar) and slock(lockscreen)"
 (cd ~/.local/src/dwm && make && doas make install)
@@ -42,5 +44,5 @@ doas ln /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d
 
 echo "ZSH setup"
 ~/dwm-dots/build/zsh.sh
-ln ~/dwm-dots/.zshrc ~/
+cp ~/dwm-dots/.zshrc ~/
 

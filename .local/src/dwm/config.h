@@ -3,7 +3,7 @@
 #include <stdint.h>
 #define int8 int8_t
 // appearance
-static const int8 borderpx = 2; // border pixel of windows
+static const int8 borderpx = 1; // border pixel of windows
 static const int8 snap = 16; // snap pixel
 static const int8 showsystray = 1; // 0 means no systray
 static const int8 systrayonleft = 0; // 0: systray in the right corner, >0: systray on left of status text
@@ -132,8 +132,7 @@ static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "config", N
 static const Key keys[] = {
   // modifier, key, function, argument
   { MODKEY, XK_a, spawn, {.v = dmenucmd } },
-  { MODKEY, XK_Return, spawn, SHCMD("kitty") },
-  { MODKEY|ShiftMask, XK_Return, spawn, SHCMD("kitty --config ~/.config/kitty/nonebgopacity.conf") },
+  { MODKEY, XK_Return, spawn, SHCMD("alacritty") },
   { MODKEY, XK_b, spawn, SHCMD("firefox") },
   { MODKEY|ShiftMask, XK_t, spawn, SHCMD("telegram-desktop") },
   { MODKEY|ShiftMask, XK_w, spawn, SHCMD("feh --randomize --no-fehbg --bg-fill ~/wallpaper") },

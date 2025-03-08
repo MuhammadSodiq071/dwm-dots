@@ -24,7 +24,7 @@ style = "BoldItalic"
 save_to_clipboard = true
 
 [window]
-opacity = 1
+opacity = 0.5
 
 [window.padding]
 x = 10
@@ -58,5 +58,4 @@ blue = "#83a598"
 magenta = "#d3869b"
 cyan = "#8ec07c"
 white = "#ebdbb2"
-
 

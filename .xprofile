@@ -1,7 +1,6 @@
 #!/bin/sh
 
 ~/.local/bin/kbsetup.sh
-xrdb $HOME/.Xresources
 feh --no-fehbg --bg-fill ~/wallpaper/default.png
-picom &
+# picom &
 

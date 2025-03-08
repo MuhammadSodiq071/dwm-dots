@@ -3,7 +3,7 @@
 #include <stdint.h>
 #define int8 int8_t
 // appearance
-static const int8 borderpx = 2; // border pixel of windows
+static const int8 borderpx = 1; // border pixel of windows
 static const int8 snap = 16; // snap pixel
 static const int8 showsystray = 1; // 0 means no systray
 static const int8 systrayonleft = 0; // 0: systray in the right corner, >0: systray on left of status text

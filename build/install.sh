@@ -5,6 +5,9 @@ echo "Installing packages"
 doas xbps-install -Su
 doas xbps-install dunst libnotify fzf lsd alacritty fastfetch clipmenu flameshot brightnessctl firefox man dmenu rofi xcape setxkbmap feh xorg zsh gtk-engine-murrine neovim pnpm xdg-user-dirs btop mesa-vulkan-radeon ranger bat mpv imv vlc lxappearance qt{5,6}ct tty-clock libX{11,inerama,ft,randr}-devel imlib2-devel curl gpick translate-shell xclip xcursor-themes pulseaudio alsa-plugins-pulseaudio alsa-utils zramen sddm
 
+echo "Installing ueberzugpp"
+~/dwm-dots/build/ueberzugpp.sh
+
 echo "Enabling services sddm and zramen"
 doas ln -s /etc/sv/sddm /var/service
 doas ln -s /etc/sv/zramen /var/service

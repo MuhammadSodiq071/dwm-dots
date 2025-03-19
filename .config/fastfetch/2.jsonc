@@ -45,11 +45,6 @@
             "type": "memory"
         },
         {
-            "key": "│ {#33} weather {#keys}│",
-            "type": "weather",
-            "timeout": "1000"
-        },
-        {
             "key": "├───────────┤",
             "type": "custom"
         },

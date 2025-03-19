@@ -302,7 +302,7 @@ dir_node_exact_matches = {
     'themes'                        : '',
     'tools'                         : '󱁤',
     'usr'                           : '',
-    'video'                         : '',
+    'videos'                        : '',
     'vim'                           : '',
     'vlc'                           : '󰕼',
     'vscodium-bin'                  : '',

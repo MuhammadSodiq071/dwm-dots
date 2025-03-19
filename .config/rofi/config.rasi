@@ -12,7 +12,6 @@ configuration{
     display-drun: "   Apps ";
     display-run: "   Run ";
     display-window: "   Window";
-    display-Network: " 󰤨  Network";
     sidebar-mode: true;
 }
 
@@ -24,8 +23,8 @@ element-text, element-icon , mode-switcher {
 window {
     width: 500px;
     height: 450px;
-    border: 3px;
-    border-color: #2e2e2e;
+    border: 1px;
+    border-color: #fe8019;
     background-color: #2e2e2e;
 }
 
@@ -35,7 +34,7 @@ mainbox {
 
 inputbar {
     children: [prompt,entry];
-    background-color: #2e2e2e;
+    background-color: transparent;
     border-radius: 5px;
     padding: 2px;
 }
@@ -44,7 +43,7 @@ prompt {
     background-color: #7aa2f7;
     padding: 6px;
     text-color: #2e2e2e;
-    border-radius: 3px;
+    border-radius: 10px;
     margin: 20px 0px 0px 20px;
 }
 
@@ -58,7 +57,7 @@ entry {
     margin: 20px 0px 0px 10px;
     text-color: #fe8019;
     background-color: #2e2e2e;
-    placeholder:"Search";
+    placeholder: "Search";
 }
 
 listview {
@@ -73,6 +72,7 @@ element {
     padding: 5px;
     background-color: #2e2e2e;
     text-color: #D9E0EE;
+    border-radius: 10px;
 }
 
 element-icon {

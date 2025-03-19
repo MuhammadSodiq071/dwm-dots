@@ -16,6 +16,8 @@ image/gif=imv.desktop
 audio/x-wav=mpv.desktop
 audio/mpeg=mpv.desktop
 video/mp4=mpv.desktop
+text/plain=nvim.desktop
+text/x-shellscript=nvim.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;

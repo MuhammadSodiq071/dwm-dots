@@ -19,6 +19,10 @@ done
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
 
+# lf() { # lfcd
+#     cd "$(command lf -print-last-dir "$@")"
+# }
+
 lf() { # ranger cd
     local tempfile=$(mktemp)
     ranger --choosedir="$tempfile" "$@"
@@ -43,4 +47,4 @@ lf() { # ranger cd
 alias ls='lsd'
 alias la='lsd -la'
 
-
+bindkey -s '^o' 'lf\n'

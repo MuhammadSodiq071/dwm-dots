@@ -33,7 +33,7 @@
         {
             "key": "│ {#36}󰍛 cpu     {#keys}│",
             "type": "cpu",
-            "showPeCoreCount": true
+            "format": "{name}",
         },
         {
             "key": "│ {#34}󰉉 disk    {#keys}│",
@@ -43,11 +43,6 @@
         {
             "key": "│ {#35} memory  {#keys}│",
             "type": "memory"
-        },
-        {
-            "key": "│ {#33} weather {#keys}│",
-            "type": "weather",
-            "timeout": "1000"
         },
         {
             "key": "├───────────┤",

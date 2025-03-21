@@ -1,7 +1,7 @@
 git clone https://github.com/jstkdng/ueberzugpp.git
 cd ueberzugpp
 mkdir build && cd build
-doas xbps-install cmake libvips libvips-devel libsixel libsixel-devel tbb tbb-devel chafa chafa-devel openssl openssl-devel xcb-util-image xcb-util-image-devel libopencv libopencv-devel
+doas xbps-install cmake libvips libvips-devel libsixel libsixel-devel tbb tbb-devel chafa chafa-devel libchafa openssl openssl-devel xcb-util-image xcb-util-image-devel libopencv libopencv-devel
 cmake -DCMAKE_BUILD_TYPE=Release ..
 cmake --build .
 cd ..

@@ -40,6 +40,7 @@ echo "Compiling dwm, dwmblocks(bar) and slock(lockscreen)"
 (cd ~/.local/src/dwm && make && doas make install)
 (cd ~/.local/src/dwmblocks && make && doas make install)
 (cd ~/.local/src/slock && make && doas make install)
+(cd ~/.local/src/st && make && doas make install)
 
 echo "Configuring Environment..."
 echo "QT_QPA_PLATFORMTHEME=qt6ct" | doas tee -a /etc/environment

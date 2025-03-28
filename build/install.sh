@@ -38,6 +38,7 @@ cp -r ~/dwm-dots/wallpaper ~/
 
 echo "Compiling dwm, dwmblocks(bar) and slock(lockscreen)"
 (cd ~/.local/src/dwm/ && make && sudo make install)
+(cd ~/.local/src/st/ && make && sudo make install)
 (cd ~/.local/src/dwmblocks/ && make && sudo make install)
 (cd ~/.local/src/slock/ && make && sudo make install)
 

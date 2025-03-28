@@ -7,6 +7,6 @@ alias dv='doas vim'
 alias dn='doas nvim'
 alias clock='tty-clock -scC 4'
 alias nf='fastfetch --config ~/.config/fastfetch/all.jsonc'
-alias ff='fastfetch --logo ~/.config/fastfetch/logo'
+alias ff='fastfetch --logo arch2'
 alias pf='fastfetch --config ~/.config/fastfetch/2.jsonc'
 

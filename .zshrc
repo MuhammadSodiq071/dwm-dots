@@ -19,11 +19,11 @@ done
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
 
-# lf() { # lfcd
+# lfcd() { # lfcd
 #     cd "$(command lf -print-last-dir "$@")"
 # }
 
-lf() { # ranger cd
+rangercd() { # ranger cd
     local tempfile=$(mktemp)
     ranger --choosedir="$tempfile" "$@"
     if [[ -f $tempfile ]]; then
@@ -35,7 +35,7 @@ lf() { # ranger cd
     fi
 }
 
-# lf() { # yazi cd
+# yazicd() { # yazi cd
 #     local tempfile=$(mktemp)
 #     yazi --cwd-file="$tempfile" "$@"
 #     if [[ -f $tempfile ]]; then
@@ -44,7 +44,7 @@ lf() { # ranger cd
 #     fi
 # }
 
-alias ls='lsd'
+alias ls='lsd -1'
 alias la='lsd -la'
 
-bindkey -s '^o' 'lf\n'
+bindkey -s '^o' 'rangercd\n'

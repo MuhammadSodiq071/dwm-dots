@@ -8,8 +8,7 @@ doas xbps-install dunst libnotify fzf lsd alacritty fastfetch clipmenu flameshot
 echo "Installing ueberzugpp"
 ~/dwm-dots/build/ueberzugpp.sh
 
-echo "Enabling services sddm and zramen"
-doas ln -s /etc/sv/sddm /var/service
+echo "zramen"
 doas ln -s /etc/sv/zramen /var/service
 
 echo "Copying dwm.desktop for display manager"

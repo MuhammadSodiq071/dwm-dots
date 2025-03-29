@@ -87,7 +87,7 @@ static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "config", N
 static const Key keys[] = {
 	/* modifier         key         function        argument */
     {MODKEY,            XK_a,       spawn,          {.v = dmenucmd}},
-    {MODKEY,            XK_Return,  spawn,          SHCMD("st")}
+    {MODKEY,            XK_Return,  spawn,          SHCMD("st")},
 	{MODKEY|ShiftMask,  XK_Return,  spawn,          SHCMD("alacritty")},
 	{MODKEY,            XK_b,       spawn,          SHCMD("firefox")},
     {MODKEY|ShiftMask,  XK_t,       spawn,          SHCMD("telegram-desktop")},

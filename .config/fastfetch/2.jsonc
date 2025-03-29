@@ -15,33 +15,33 @@
             "type": "custom"
         },
         {
-            "key": "│ {#32}{icon} os      {#keys}│",
+            "key": "│ {#31}{icon} os      {#keys}│",
             "type": "os"
-        },
-        {
-            "key": "│ {#31} kernel  {#keys}│",
-            "type": "kernel"
         },
         {
             "key": "│ {#33}󰇄 wm      {#keys}│",
             "type": "wm"
         },
         {
-            "key": "│ {#35} shell   {#keys}│",
+            "key": "│ {#32} term    {#keys}│",
+            "type": "terminal"
+        },
+        {
+            "key": "│ {#34} shell   {#keys}│",
             "type": "shell"
         },
         {
-            "key": "│ {#36}󰍛 cpu     {#keys}│",
+            "key": "│ {#35}󰍛 cpu     {#keys}│",
             "type": "cpu",
-            "showPeCoreCount": true
+            "format": "{name}",
         },
         {
-            "key": "│ {#34}󰉉 disk    {#keys}│",
+            "key": "│ {#36}󰉉 disk    {#keys}│",
             "type": "disk",
             "folders": "/"
         },
         {
-            "key": "│ {#35} memory  {#keys}│",
+            "key": "│ {#31} memory  {#keys}│",
             "type": "memory"
         },
         {

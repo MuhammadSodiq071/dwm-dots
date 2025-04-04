@@ -3,7 +3,10 @@ su -c "xbps-install opendoas && touch /etc/doas.conf && echo 'permit persist :wh
 
 echo "Installing packages"
 doas xbps-install -Su
-doas xbps-install dunst libnotify fzf lsd alacritty fastfetch clipmenu flameshot brightnessctl firefox man dmenu rofi xcape setxkbmap feh xorg zsh gtk-engine-murrine neovim pnpm xdg-user-dirs btop mesa-vulkan-radeon ranger bat mpv imv vlc lxappearance qt{5,6}ct tty-clock libX{11,inerama,ft,randr}-devel imlib2-devel curl gpick translate-shell xclip xcursor-themes pulseaudio alsa-plugins-pulseaudio alsa-utils zramen
+doas xbps-install dunst libnotify fzf lsd alacritty clipmenu flameshot brightnessctl firefox man dmenu rofi xcape setxkbmap feh xorg zsh gtk-engine-murrine neovim pnpm xdg-user-dirs btop mesa-vulkan-radeon ranger bat mpv imv vlc lxappearance qt{5,6}ct tty-clock libX{11,inerama,ft,randr}-devel imlib2-devel curl gpick translate-shell xclip xcursor-themes pulseaudio alsa-plugins-pulseaudio alsa-utils zramen
+
+echo "Installing fastfetch"
+~/dwm-dots/build/fastfetch.sh
 
 echo "Installing ueberzugpp"
 ~/dwm-dots/build/ueberzugpp.sh
@@ -16,10 +19,10 @@ doas mkdir -p /usr/share/xsessions
 doas cp ~/dwm-dots/build/dwm.desktop /usr/share/xsessions/
 
 echo "Installing Gruvbox-Material theme and JetBrainsMono Nerd Fonts"
-git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
-doas cp -r ~/gruvbox-material-gtk/themes/Gruvbox-Material-Dark /usr/share/themes
-doas cp -r ~/gruvbox-material-gtk/icons/Gruvbox-Material-Dark /usr/share/icons
-doas rm -rf gruvbox-material-gtk
+git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git ~/gruvbox-material-gtk
+doas cp -r ~/gruvbox-material-gtk/themes/Gruvbox-Material-Dark /usr/share/themes/
+doas cp -r ~/gruvbox-material-gtk/icons/Gruvbox-Material-Dark /usr/share/icons/
+doas rm -rf ~/gruvbox-material-gtk
 
 doas mkdir -p /usr/share/fonts/nerdfonts
 doas cp ~/dwm-dots/build/*.ttf /usr/share/fonts/nerdfonts
@@ -54,7 +57,7 @@ echo "ZSH setup"
 echo "/sbin/zsh" | doas tee -a /etc/shells
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# plugins
+# plugins. i don't know why, but after installing oh my zsh, next commands will not run
 #git clone https://github.com/MichaelAquilina/zsh-auto-notify.git $ZSH_CUSTOM/plugins/auto-notify
 #git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting

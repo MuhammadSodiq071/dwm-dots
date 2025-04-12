@@ -1,5 +1,11 @@
 return {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform"
+  "stevearc/conform.nvim",
+  opts = {
+    formatters_by_ft = {
+      lua    = { "stylua" },
+      c      = { "clang-format" },
+      go     = { "gofumpt" },
+      python = { "black" },
+    },
+  },
 }

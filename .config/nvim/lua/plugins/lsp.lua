@@ -4,38 +4,19 @@ return {
   enabled = true,
   lazy = false,
   dependencies = {
-    -- Mason LSPconfig: Extension to mason.nvim to automatically set up LSP servers
-    'williamboman/mason-lspconfig.nvim',
-
-    -- Nvim-cmp: A completion engine plugin for Neovim written in Lua
-    'hrsh7th/nvim-cmp',
-
-    -- nvim-cmp source for LSP
+    'williamboman/mason-lspconfig.nvim', -- Automatically set up LSP servers
+    'hrsh7th/nvim-cmp',                  -- Completion
     'hrsh7th/cmp-nvim-lsp',
-
-    -- nvim-cmp source for buffer words
     'hrsh7th/cmp-buffer',
-
-    -- nvim-cmp source for filesystem paths
     'hrsh7th/cmp-path',
-
-    -- nvim-cmp source for Neovim's command-line
     'hrsh7th/cmp-cmdline',
-
-    -- LuaSnip: A snippet engine for Neovim written in Lua
-    'L3MON4D3/LuaSnip',
-
-    -- nvim-cmp source for LuaSnip
+    'L3MON4D3/LuaSnip', -- Snippets
     'saadparwaiz1/cmp_luasnip',
-
-    -- Fidget: Standalone UI for nvim-lsp progress. Eye candy for the impatient.
     'j-hui/fidget.nvim',
-
-    -- lspkind for awesome icons
-    'onsails/lspkind.nvim'
+    'onsails/lspkind.nvim' -- Icons
   },
 
-  config = function ()
+  config = function()
     require('fidget').setup({})
     local cmp = require('cmp')
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
@@ -45,10 +26,10 @@ return {
     local lspconfig = require('lspconfig')
 
     local capabilities = vim.tbl_deep_extend(
-      'force',  -- Use 'force' to overwrite conflicting keys
-      {},  -- Start with an empty table
-      vim.lsp.protocol.make_client_capabilities(),  -- Default LSP client capabilities
-      cmp_nvim_lsp.default_capabilities()  -- Capabilities required for nvim-cmp
+      'force',                                     -- Use 'force' to overwrite conflicting keys
+      {},                                          -- Start with an empty table
+      vim.lsp.protocol.make_client_capabilities(), -- Default LSP client capabilities
+      cmp_nvim_lsp.default_capabilities()          -- Capabilities required for nvim-cmp
     )
 
     lspconfig.lua_ls.setup({
@@ -73,7 +54,7 @@ return {
         pylsp = {
           plugins = {
             pycodestyle = {
-              ignore = {'W391'},
+              ignore = { 'W391' },
               maxLineLength = 100
             }
           }
@@ -84,7 +65,7 @@ return {
     -- Setup completion configuration for nvim-cmp
     cmp.setup({
       snippet = {
-        expand = function (args)
+        expand = function(args)
           luasnip.lsp_expand(args.body)
         end
       },
@@ -133,9 +114,9 @@ return {
         -- Set source for LuaSnip snippets
         { name = 'luasnip' }
       }, {
-          -- If cmp haven't found anything in the first table, it goes to this one
-          { name = 'buffer' },
-        }),
+        -- If cmp haven't found anything in the first table, it goes to this one
+        { name = 'buffer' },
+      }),
 
       formatting = {
         format = lspkind.cmp_format({
@@ -167,9 +148,9 @@ return {
         -- Set source for file paths
         { name = 'path' }
       }, {
-          -- Set source for command-line commands
-          { name = 'cmdline' }
-        }),
+        -- Set source for command-line commands
+        { name = 'cmdline' }
+      }),
       -- Allow non-prefix matching for symbols
       matching = { disallow_symbol_nonprefix_matching = false }
     })

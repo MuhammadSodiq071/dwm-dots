@@ -1,17 +1,25 @@
 return {
   'williamboman/mason.nvim',
-  config = function ()
+  config = function()
     -- Initialize the mason plugin, which manages installation of LSP servers and other tools
 
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
     local capabilities = vim.tbl_deep_extend(
-      'force',  -- Use 'force' to overwrite conflicting keys
-      {},  -- Start with an empty table
-      vim.lsp.protocol.make_client_capabilities(),  -- Default LSP client capabilities
-      cmp_nvim_lsp.default_capabilities()  -- Capabilities required for nvim-cmp
+      'force',                                     -- Use 'force' to overwrite conflicting keys
+      {},                                          -- Start with an empty table
+      vim.lsp.protocol.make_client_capabilities(), -- Default LSP client capabilities
+      cmp_nvim_lsp.default_capabilities()          -- Capabilities required for nvim-cmp
     )
 
-    require('mason').setup()
+    require('mason').setup({
+      ui = {
+        icons = {
+          package_installed = " ",
+          package_pending = " ",
+          package_uninstalled = " ",
+        },
+      },
+    })
     -- Initialize mason-lspconfig plugin, which bridges mason and nvim-lspconfig
     require('mason-lspconfig').setup({
       handlers = {
@@ -23,7 +31,7 @@ return {
           })
         end,
 
-        ['lua_ls'] = function ()
+        ['lua_ls'] = function()
           require('lspconfig').lua_ls.setup({
             capabilities = capabilities,
             settings = {

@@ -2,6 +2,5 @@
 
 ~/.local/bin/kbsetup.sh
 feh --no-fehbg --bg-fill ~/wallpaper/default.png
-# picom &
 slock
 

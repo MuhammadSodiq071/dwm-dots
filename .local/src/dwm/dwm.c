@@ -2518,7 +2518,7 @@ updatesystray(void)
             systray = NULL;
             return;
         }
-    } 
+    }
     for (w = 0, i = systray->icons; i; i = i->next) {
         /* make sure the background color stays the same */
         wa.background_pixel = scheme[SchemeNorm][ColBg].pixel;

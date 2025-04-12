@@ -38,7 +38,7 @@ cp ~/dwm-dots/.xprofile ~/
 cp ~/dwm-dots/.gtkrc-2.0 ~/
 cp -r ~/dwm-dots/wallpaper ~/
 
-echo "Compiling dwm, dwmblocks(bar) and slock(lockscreen)"
+echo "Compiling dwm, st(term) dwmblocks(bar) and slock(lockscreen)"
 (cd ~/.local/src/dwm && make && doas make install)
 (cd ~/.local/src/st && make && doas make install)
 (cd ~/.local/src/dwmblocks && make && doas make install)

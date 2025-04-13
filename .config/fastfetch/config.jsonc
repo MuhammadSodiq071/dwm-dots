@@ -102,13 +102,13 @@
             "keyColor": "green"
         },
         {
-            "type": "display",
-            "key": "│ ├󰍹 ",
+            "type": "sound",
+            "key": "│ ├ ",
             "keyColor": "green"
         },
         {
-            "type": "sound",
-            "key": "│ └ ",
+            "type": "display",
+            "key": "│ └󰍹 ",
             "keyColor": "green"
         },
         {

@@ -1,5 +1,5 @@
 echo "Installing packages"
-sudo pacman -S dunst libnotify fzf lsd alacritty ueberzugpp fastfetch clipmenu flameshot brightnessctl firefox pipewire pipewire-alsa pipewire-pulse opendoas man dmenu rofi xcape xorg-setxkbmap feh xorg telegram-desktop unzip zsh gtk-engine-murrine neovim npm xdg-user-dirs btop vulkan-radeon ranger bat gtk2 gtk3 gtk4 flatpak bluez bluez-utils blueman openssh ssh-tools amd-ucode mpv imv vlc lxappearance qt5ct qt6ct translate-shell
+sudo pacman -S dunst libnotify fzf lsd alacritty ueberzugpp fastfetch clipmenu flameshot brightnessctl firefox pipewire pipewire-alsa pipewire-pulse opendoas man dmenu rofi xcape xorg-setxkbmap feh xorg telegram-desktop unzip zsh gtk-engine-murrine neovim xdg-user-dirs btop vulkan-radeon ranger bat gtk2 gtk3 gtk4 flatpak bluez bluez-utils blueman openssh ssh-tools amd-ucode mpv imv vlc lxappearance qt5ct qt6ct translate-shell
 
 echo "Installing paru and aur packages"
 git clone https://aur.archlinux.org/paru-bin.git && (cd paru-bin && makepkg -si) && rm -rf paru-bin
